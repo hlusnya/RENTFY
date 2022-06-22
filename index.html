@@ -45,6 +45,8 @@
     <script type="text/javascript" src="js/scripts.js"></script>
 
 
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 
 <body>
@@ -102,18 +104,24 @@
                 <div class="catalog__wrap">
                     <div class="catalog__search">
                         <form action="" class="catalog__search-form">
-                            <div class="catalog__search-wrap">
+                            <div class="catalog__search-wrap datepicker-block">
                                 <div class="catalog__search-input">
                                     <input type="text" name="" class="input input--bdb" placeholder="Galamērķis">
                                 </div>
                                 <div class="catalog__search-input">
-                                    <input type="text" name="" class="input input--bdb" placeholder="No">
+                                    <input type="text" name="" class="input input--bdb datepicker-from" placeholder="No">
                                 </div>
                                 <div class="catalog__search-input">
-                                    <input type="text" name="" class="input input--bdb" placeholder="Līdz">
+                                    <input type="text" name="" class="input input--bdb datepicker-to" placeholder="Līdz">
                                 </div>
                                 <div class="catalog__search-input">
-                                    <input type="text" name="" class="input input--bdb input--counter" placeholder="Viesu skaits">
+                                    <select name="" data-placeholder="Viesu skaits" class="styler styler--bdb styler--counter">
+                                        <option value=""></option>
+                                        <option value="1">1 persona</option>
+                                        <option value="2">2 personas</option>
+                                        <option value="3">3 personas</option>
+                                    </select>
+                                    <!-- <input type="text" name="" class="input input--bdb input--counter" placeholder="Viesu skaits"> -->
                                     <!-- <div class="counter">
                                         <button class="counter__button counter__button-minus counter-minus" type="button"></button>
                                         <input type="text" name="" class="input input--bdb" placeholder="Viesu skaits">

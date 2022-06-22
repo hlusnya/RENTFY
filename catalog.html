@@ -45,6 +45,8 @@
     <script type="text/javascript" src="js/scripts.js"></script>
 
 
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 
 <body>
@@ -106,14 +108,19 @@
                             
                             <div class="filters__item">
                                 <div class="filters__item-title">Meklēt:</div>
-                                <form action="" class="filters__search">
-                                    <input type="text" name="" class="input input--bdb" placeholder="Galamērķis">                               
+                                <form action="" class="filters__search datepicker-block">
+                                    <input type="text" name="" class="input input--bdb input-mb" placeholder="Galamērķis">                               
                                 
-                                    <input type="text" name="" class="input input--bdb" placeholder="No">                                
+                                    <input type="text" name="" class="input input--bdb datepicker-from input-mb" placeholder="No">                                
                                 
-                                    <input type="text" name="" class="input input--bdb" placeholder="Līdz">                                
+                                    <input type="text" name="" class="input input--bdb datepicker-to input-mb" placeholder="Līdz">                                
                                 
-                                    <input type="text" name="" class="input input--bdb input--counter" placeholder="Viesu skaits">
+                                    <select name="" data-placeholder="Viesu skaits" class="styler styler--bdb styler--counter input-mb">
+                                        <option value=""></option>
+                                        <option value="1">1 persona</option>
+                                        <option value="2">2 personas</option>
+                                        <option value="3">3 personas</option>
+                                    </select>
                                        
                                     <div class="filters__search-btn">
                                         <button class="btn btn--red">Meklēt</button>

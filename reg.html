@@ -1,0 +1,206 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html lang="ru" class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="ru" class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="ru" class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="ru" class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="ru"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta name="robots" content="">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<meta name="format-detection" content="telephone=no"/>
+	<meta name="format-detection" content="address=no"/>
+	
+	<title>Register</title>
+	<link href="favicon.ico" type="image/x-icon" rel="icon">
+    <link href="favicon.ico" type="image/x-icon" rel="shortcut icon">  
+
+  	<meta property="og:title" content="Register" />
+	<meta property="og:description" content="">
+	<meta property="og:image" content="images/logo.png" />
+	<meta property="og:url" content="" />  
+
+ 	<!--[if IE]>
+    	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <![endif]--> 
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet"> 
+ 
+	<link href="js/slick/slick.css" rel="stylesheet">
+	<link href="styles/styles.min.css" rel="stylesheet">
+
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="js/jquery.maskedinput.js"></script>
+    <script type="text/javascript" src="js/jquery.formstyler.js"></script>
+    <script type="text/javascript" src="js/slick/slick.js"></script>
+    <script type="text/javascript" src="js/forms.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+
+
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+
+<body>
+
+<section class="wrapper">
+
+    <header class="header">
+	<div class="container">	
+		<div class="header__wrap">
+			<a href="/" class="header__logo"><img src="images/logo.svg" alt=""></a>
+
+			<div class="header__action">
+				<a href="auth.html" class="header__btn btn btn--border">Ienākt</a>
+				<a href="reg.html" class="header__btn btn">Reģistrēties</a>
+				<a href="add.html" class="header__link">
+					<img src="images/icons/key.svg" alt="">					
+					<span>Pievienot mājokli</span>
+				</a>
+			</div>
+
+			<a href="#" class="header__menu-togger clearfix" id="menu_toggler">
+				<div></div><div></div><div></div>
+			</a>
+		</div>
+	</div>	
+</header>
+    
+    <main class="content__wrapper">
+		
+        <section class="auth">
+            <div class="container">
+                <div class="auth__content">
+                    <div class="auth__head">
+                        <div class="auth__title">Создайте свой профиль</div>
+                        <div class="auth__subtitle">Te var nelielu tekstu, ja vajag..</div>
+                    </div>  
+                    
+                    <div class="auth__navt">
+                        <ul>
+                            <li><a href="#" data-tab="ind" class="auth-navt-link active">Для физических лиц</a></li>
+                            <li><a href="#" data-tab="legal" class="auth-navt-link">Для юридических лиц</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="auth__tab auth-tab active" data-tab="ind">
+                        <div class="auth__social">
+                            <a href="#" class="auth__social-btn">
+                                <img src="images/icons/auth-google.png" alt="" class="auth__social-btn__icon">
+                                <span>Login with Google</span>
+                            </a>
+                            <a href="#" class="auth__social-btn">
+                                <img src="images/icons/auth-vk.png" alt="" class="auth__social-btn__icon">
+                                <span>Login with VK</span>
+                            </a>
+                            <a href="#" class="auth__social-btn">
+                                <img src="images/icons/auth-fb.png" alt="" class="auth__social-btn__icon">
+                                <span>Login with Facebook</span>
+                            </a>
+                        </div>
+    
+                        <div class="auth__t">Или используйте свою электронную почту</div>
+
+                        <form action="" class="auth__form" enctype="multipart/form-data">
+                            <input type="text" name="" placeholder="Field" class="input">
+                            <input type="text" name="" placeholder="Field" class="input">
+                            <input type="text" name="" placeholder="Field" class="input">
+
+                            <label class="label mt">
+                                <input type="file" name="" class="styler" data-browse="Upload a file" data-placeholder="Dokuments ..">
+                            </label>
+
+                            <button class="btn btn--wall">Reģistrēties</button>
+                        </form>
+                    </div>
+
+                    <div class="auth__tab auth-tab " data-tab="legal">
+                        <form action="" class="auth__form">
+                            <div class="auth__t">Ваша информация</div>
+                            <input type="text" name="" placeholder="Vārds Uzvārds" class="input">
+                            <input type="text" name="" placeholder="E-pasts" class="input">
+                            <input type="password" name="" placeholder="Parole" class="input">
+
+                            <div class="auth__t">Информация о компании</div>
+                            <input type="text" name="" placeholder="Field" class="input">
+                            <input type="text" name="" placeholder="Field" class="input">
+                            <input type="text" name="" placeholder="Field" class="input">
+
+                            <div class="auth__form-radio mt">
+                                <div class="auth__form-radio__t">Radio Button</div>
+                                
+                                <div class="auth__form-radio__act">
+                                    <label class="label">
+                                        <input type="radio" name="radio1" class="styler">
+                                        <span>Answ 1</span>
+                                    </label>
+                                    <label class="label">
+                                        <input type="radio" name="radio1" class="styler">
+                                        <span>Answ 1</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <label class="label mt">
+                                <input type="file" name="" class="styler" data-browse="Upload a file" data-placeholder="Dokuments ..">
+                            </label>
+
+                            <button class="btn btn--wall">Reģistrēties</button>
+                        </form>
+                    </div>
+                        
+                </div>
+            </div>
+            
+            <div class="auth__bg"></div>
+        </section><!--auth-->
+        
+
+	</main><!--content__wrapper-->
+
+
+
+</section>
+
+<div class="popup " data-popup="call">
+	<div class="popup__content">
+		<div class="popup__bg popup-close"></div>
+		<div class="popup__container">
+			<a href="#" class="popup__close popup-close"></a>
+			<div class="popup__body">
+				<div class="popup__head">
+					<div class="popup__title"></div>
+					<div class="popup__intro"></div>
+				</div>
+				
+			</div>
+		</div><!--popup__container-->
+	</div>
+</div>
+
+<div class="popup " data-popup="thank">
+	<div class="popup__content">
+		<div href="" class="popup__bg popup-close"></div>
+		<div class="popup__container">
+			<a href="#" class="popup__close popup-close"></a>
+			<div class="popup__body">
+				<div class="popup__head">
+					<div class="popup__title"></div>
+					<div class="popup__intro"></div>
+				</div>
+				
+			</div>
+		</div><!--popup__container-->
+	</div>
+</div>
+    
+</body>
+</html>

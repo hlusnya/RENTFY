@@ -5,7 +5,21 @@ $(function(){
     $.mask.definitions['~']='[78]';
 	$(".phone-mask").mask("~(999)999-99-99");
 
-	
+	$('.datepicker-from').datepicker({
+		minDate: 0,   
+		format: 'dd/mm/yyyy'
+	});
+	$('.datepicker-to').datepicker({
+		minDate: 0,   
+		format: 'dd/mm/yyyy',
+		useCurrent: false
+	});
+	$(".datepicker-from").on("change", function (e) {
+		$('.datepicker-to').datepicker( "option", "minDate", e.target.value );
+	});
+	$(".datepicker-to").on("change", function (e) {
+		$('.datepicker-from').datepicker( "option", "maxDate", e.target.value );
+	});
 
 
 	/**************************************************************
@@ -14,7 +28,7 @@ $(function(){
 	$('body').on('click', '.btn-popup', function(e){
         e.preventDefault();
         let popup = $('.popup[data-popup="'+$(this).attr('data-popup')+'"]');
-        //formPosition(popup);
+        
         if ($(this).attr('data-push') != '')
         	$(popup).find('form').attr('data-push', $(this).attr('data-push'));
         $(popup).fadeIn(800); 
@@ -72,6 +86,20 @@ $(function(){
         speed: 300,
         slidesToShow: 1
     });
+
+
+	
+	/**************************************************************
+	Табы в регистрации
+	**************************************************************/
+	$('.auth-navt-link').click(function (e) {
+		e.preventDefault();
+		$('.auth-navt-link').removeClass('active')
+		$(this).addClass('active');
+		$('.auth-tab').fadeOut(0);
+		$('.auth-tab[data-tab='+$(this).attr('data-tab')+']').fadeIn(0);
+	});	
+
 
 
 
