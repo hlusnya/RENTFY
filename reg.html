@@ -16,8 +16,8 @@
 	<meta name="format-detection" content="address=no"/>
 	
 	<title>Register</title>
-	<link href="favicon.ico" type="image/x-icon" rel="icon">
-    <link href="favicon.ico" type="image/x-icon" rel="shortcut icon">  
+	<link href="favicon.png" type="image/png" rel="icon">
+    <link href="favicon.png" type="image/png" rel="shortcut icon">  
 
   	<meta property="og:title" content="Register" />
 	<meta property="og:description" content="">
@@ -33,6 +33,10 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet"> 
  
+	
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.4.2/jquery.fancybox.min.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<link href="js/slick/slick.css" rel="stylesheet">
 	<link href="styles/styles.min.css" rel="stylesheet">
 
@@ -45,8 +49,8 @@
     <script type="text/javascript" src="js/scripts.js"></script>
 
 
-	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.4.2/jquery.fancybox.min.js"></script>
 </head>
 
 <body>
@@ -58,17 +62,32 @@
 		<div class="header__wrap">
 			<a href="/" class="header__logo"><img src="images/logo.svg" alt=""></a>
 
-			<div class="header__action">
-				<a href="auth.html" class="header__btn btn btn--border">Ienākt</a>
-				<a href="reg.html" class="header__btn btn">Reģistrēties</a>
-				<a href="add.html" class="header__link">
-					<img src="images/icons/key.svg" alt="">					
-					<span>Pievienot mājokli</span>
-				</a>
+			<div class="header__navfix">
+				<div class="header__navfix-bg close-menu"></div>
+				<div class="header__navfix-box">
+					<div class="header__action">
+						
+							<a href="auth.html" class="header__btn btn btn--border">Ienākt</a>
+							<a href="reg.html" class="header__btn btn">Reģistrēties</a>
+							<a href="add.html" class="header__link header__reg">
+								<img src="images/icons/key.svg" alt="">					
+								<span>Pievienot mājokli</span>
+							</a>
+						
+
+						
+
+						
+
+						
+					</div>
+				</div>
 			</div>
 
 			<a href="#" class="header__menu-togger clearfix" id="menu_toggler">
-				<div></div><div></div><div></div>
+				<!-- <div></div><div></div><div></div> -->
+				<img src="images/icons/menu_toggler.svg" alt="" class="img-open">	
+				<img src="images/icons/menu_close.svg" alt="" class="img-close">				
 			</a>
 		</div>
 	</div>	
@@ -170,17 +189,50 @@
 
 </section>
 
-<div class="popup " data-popup="call">
+<div class="popup " data-popup="contact_owner">
 	<div class="popup__content">
 		<div class="popup__bg popup-close"></div>
+		<a href="#" class="popup__close popup-close"></a>
 		<div class="popup__container">
-			<a href="#" class="popup__close popup-close"></a>
 			<div class="popup__body">
-				<div class="popup__head">
-					<div class="popup__title"></div>
-					<div class="popup__intro"></div>
+				<div class="section__head text--center">
+					<div class="section__title">Contact owner</div>
+					<div class="section__intro">We usually respond within 24 hours</div>
 				</div>
-				
+
+				<form action="" method="post" class="form">
+					<textarea name="" class="input" placeholder="Start typing..."></textarea>
+
+					<button class="btn btn--wall">Send a message</button>
+				</form>
+			</div>
+		</div><!--popup__container-->
+	</div>
+</div>
+
+<div class="popup " data-popup="cancel_booking">
+	<div class="popup__content">
+		<div class="popup__bg popup-close"></div>
+		<a href="#" class="popup__close popup-close"></a>
+		<div class="popup__container">
+			<div class="popup__body">
+				<div class="section__head text--center">
+					<div class="section__title">Cancel reservation</div>
+					<div class="section__intro">We are sorry that you have chosen to cancel your reservation</div>
+				</div>
+
+				<form action="" method="post" class="form">
+					<select name="topic" class="styler" data-placeholder="Choose Topic">
+						<option value=""></option>
+						<option value="topic 1">topic 1</option>
+						<option value="topic 2">topic 2</option>
+						<option value="topic 3">topic 3</option>
+						<option value="topic 4">topic 4</option>
+					</select>
+					<textarea name="" class="input" placeholder="Any comments?"></textarea>
+
+					<button class="btn btn--wall">Cancel reservation</button>
+				</form>
 			</div>
 		</div><!--popup__container-->
 	</div>

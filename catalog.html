@@ -16,8 +16,8 @@
 	<meta name="format-detection" content="address=no"/>
 	
 	<title>Meklētājs</title>
-	<link href="favicon.ico" type="image/x-icon" rel="icon">
-    <link href="favicon.ico" type="image/x-icon" rel="shortcut icon">  
+	<link href="favicon.png" type="image/png" rel="icon">
+    <link href="favicon.png" type="image/png" rel="shortcut icon">  
 
   	<meta property="og:title" content="Meklētājs" />
 	<meta property="og:description" content="">
@@ -33,6 +33,10 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet"> 
  
+	
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.4.2/jquery.fancybox.min.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<link href="js/slick/slick.css" rel="stylesheet">
 	<link href="styles/styles.min.css" rel="stylesheet">
 
@@ -45,8 +49,8 @@
     <script type="text/javascript" src="js/scripts.js"></script>
 
 
-	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.4.2/jquery.fancybox.min.js"></script>
 </head>
 
 <body>
@@ -58,17 +62,32 @@
 		<div class="header__wrap">
 			<a href="/" class="header__logo"><img src="images/logo.svg" alt=""></a>
 
-			<div class="header__action">
-				<a href="auth.html" class="header__btn btn btn--border">Ienākt</a>
-				<a href="reg.html" class="header__btn btn">Reģistrēties</a>
-				<a href="add.html" class="header__link">
-					<img src="images/icons/key.svg" alt="">					
-					<span>Pievienot mājokli</span>
-				</a>
+			<div class="header__navfix">
+				<div class="header__navfix-bg close-menu"></div>
+				<div class="header__navfix-box">
+					<div class="header__action">
+						
+							<a href="auth.html" class="header__btn btn btn--border">Ienākt</a>
+							<a href="reg.html" class="header__btn btn">Reģistrēties</a>
+							<a href="add.html" class="header__link header__reg">
+								<img src="images/icons/key.svg" alt="">					
+								<span>Pievienot mājokli</span>
+							</a>
+						
+
+						
+
+						
+
+						
+					</div>
+				</div>
 			</div>
 
 			<a href="#" class="header__menu-togger clearfix" id="menu_toggler">
-				<div></div><div></div><div></div>
+				<!-- <div></div><div></div><div></div> -->
+				<img src="images/icons/menu_toggler.svg" alt="" class="img-open">	
+				<img src="images/icons/menu_close.svg" alt="" class="img-close">				
 			</a>
 		</div>
 	</div>	
@@ -98,138 +117,166 @@
 
         
         <section class="catalog section__pd">
-            <div class="container">	                
+            <div class="container">	 
+
+                <div class="section__head catalog__head-mobshow">
+                    <h2 class="section__title catalog__title">Ir atrastas 123 naktsmītnes</h2>
+                </div>         
+
                 <div class="catalog__cols">
 
-                    <div class="catalog__filters filters" id="filter-catalog">
-                        <a href="#" class="filters__bg filter-catalog-close"></a>
-                        <div class="filters__form">
-                            <a href="#" class="filters__close filter-catalog-close"><img src="images/close-menu.svg"></a>
-                            
-                            <div class="filters__item">
-                                <div class="filters__item-title">Meklēt:</div>
-                                <form action="" class="filters__search datepicker-block">
+                    <div class="catalog__aside aside">
+                        
+                        <div class="aside__item aside__search">
+                            <div class="aside__item-title aside__search-title">Meklēt:</div>
+                            <form action="" class="aside__search-wrap datepicker-block">
+                                <div class="aside__search-input aside__search-2col">
                                     <input type="text" name="" class="input input--bdb input-mb" placeholder="Galamērķis">                               
-                                
+                                </div>
+                                <div class="aside__search-input">
                                     <input type="text" name="" class="input input--bdb datepicker-from input-mb" placeholder="No">                                
-                                
+                                </div>
+                                <div class="aside__search-input">
                                     <input type="text" name="" class="input input--bdb datepicker-to input-mb" placeholder="Līdz">                                
-                                
+                                </div>
+                                <div class="aside__search-input aside__search-2col">
                                     <select name="" data-placeholder="Viesu skaits" class="styler styler--bdb styler--counter input-mb">
                                         <option value=""></option>
                                         <option value="1">1 persona</option>
                                         <option value="2">2 personas</option>
                                         <option value="3">3 personas</option>
                                     </select>
-                                       
-                                    <div class="filters__search-btn">
-                                        <button class="btn btn--red">Meklēt</button>
-                                    </div>
-                                </form>
-                            </div><!--filters__item-->
+                                </div>   
+                                <div class="aside__search-btn aside__search-2col">
+                                    <button class="btn btn--red">Meklēt</button>
+                                </div>
+                            </form>
+                        </div><!--aside__item-->
 
-                            <div class="filters__item">
-                                <form action="">
-                                    <div class="filters__item-title">Atlasīt pēc kategorijas</div>
-                                    <div class="filters__list">
-                                        <ul>
-                                            <li class="filters__list-item">
-                                                <label class="label filters__list-label">
-                                                    <input type="checkbox" name="categ" value="" class="styler">
-                                                    <span>Dzīvokļi</span>
-                                                </label>
-                                            </li>
-                                            <li class="filters__list-item">
-                                                <label class="label filters__list-label">
-                                                    <input type="checkbox" name="categ" value="" class="styler">
-                                                    <span>Brīvdienu mājas</span>
-                                                </label>
-                                            </li>
-                                            <li class="filters__list-item">
-                                                <label class="label filters__list-label">
-                                                    <input type="checkbox" name="categ" value="" class="styler">
-                                                    <span>Viesu nami</span>
-                                                </label>
-                                            </li>
-                                            <li class="filters__list-item">
-                                                <label class="label filters__list-label">
-                                                    <input type="checkbox" name="categ" value="" class="styler">
-                                                    <span>Villas</span>
-                                                </label>
-                                            </li>
-                                            <li class="filters__list-item">
-                                                <label class="label filters__list-label">
-                                                    <input type="checkbox" name="categ" value="" class="styler">
-                                                    <span>Pansijas</span>
-                                                </label>
-                                            </li>
-                                        </ul>
+                        <div class="aside__item filters ">
+                            <button class="filters__open filter-catalog-open" >
+                                <img src="images/icons/settings.svg" alt="">
+                                <span>Filtrs</span>
+                            </button>  
+                            <div class="filters__fixed" id="filter-catalog">
+                                <div class="filters__head">
+                                    <div class="filters__head-wrap filters__wcont">
+                                        <a href="#" class="filters__head-prev filter-catalog-close"><- Atpakaļ</a>
+                                        <div class="filters__head-title">Filtrs</div>
+                                        <a href="#" class="filters__head-del">Dzēst</a>
                                     </div>
-                                    <div class="filters__separator"></div>
-                                    
-                                    <div class="filters__item-title">Pansijas</div>
-                                    <div class="filters__list">
-                                        <ul>
-                                            <li class="filters__list-item">
-                                                <label class="label filters__list-label">
-                                                    <input type="checkbox" name="pansias" value="" class="styler">
-                                                    <span>Atļauti mājdzīvnieki</span>
-                                                </label>
-                                            </li>
-                                            <li class="filters__list-item">
-                                                <label class="label filters__list-label">
-                                                    <input type="checkbox" name="pansias" value="" class="styler">
-                                                    <span>Atļauts ar bērniem</span>
-                                                </label>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="filters__separator"></div>
-                                    
-                                    <div class="filters__item-title">Budžets (par nakti)</div>
-                                    <div class="filters__list">
-                                        <ul>
-                                            <li class="filters__list-item">
-                                                <label class="label filters__list-label">
-                                                    <input type="checkbox" name="price" value="" class="styler">
-                                                    <span>€ 0 - € 50</span>
-                                                </label>
-                                            </li>
-                                            <li class="filters__list-item">
-                                                <label class="label filters__list-label">
-                                                    <input type="checkbox" name="price" value="" class="styler">
-                                                    <span>€ 50 - € 100</span>
-                                                </label>
-                                            </li>
-                                            <li class="filters__list-item">
-                                                <label class="label filters__list-label">
-                                                    <input type="checkbox" name="price" value="" class="styler">
-                                                    <span>€ 100 - € 150</span>
-                                                </label>
-                                            </li>
-                                            <li class="filters__list-item">
-                                                <label class="label filters__list-label">
-                                                    <input type="checkbox" name="price" value="" class="styler">
-                                                    <span>€ 150 - € 200</span>
-                                                </label>
-                                            </li>
-                                            <li class="filters__list-item">
-                                                <label class="label filters__list-label">
-                                                    <input type="checkbox" name="price" value="" class="styler">
-                                                    <span>€ 200+</span>
-                                                </label>
-                                            </li>
-                                        </ul>
-                                    </div>
-
-                                   
-                                </form>
+                                </div>
+                                <div class="filters__form">                                
+                                    <form action="" class="filters__wcont filters__form-wrap">
+                                        <div class="filters__form-item">
+                                            <div class="aside__item-title">Atlasīt pēc kategorijas</div>
+                                            <div class="filters__list">
+                                                <ul>
+                                                    <li class="filters__list-item">
+                                                        <label class="label filters__list-label">
+                                                            <input type="checkbox" name="categ" value="" class="styler">
+                                                            <span>Dzīvokļi</span>
+                                                        </label>
+                                                    </li>
+                                                    <li class="filters__list-item">
+                                                        <label class="label filters__list-label">
+                                                            <input type="checkbox" name="categ" value="" class="styler">
+                                                            <span>Brīvdienu mājas</span>
+                                                        </label>
+                                                    </li>
+                                                    <li class="filters__list-item">
+                                                        <label class="label filters__list-label">
+                                                            <input type="checkbox" name="categ" value="" class="styler">
+                                                            <span>Viesu nami</span>
+                                                        </label>
+                                                    </li>
+                                                    <li class="filters__list-item">
+                                                        <label class="label filters__list-label">
+                                                            <input type="checkbox" name="categ" value="" class="styler">
+                                                            <span>Villas</span>
+                                                        </label>
+                                                    </li>
+                                                    <li class="filters__list-item">
+                                                        <label class="label filters__list-label">
+                                                            <input type="checkbox" name="categ" value="" class="styler">
+                                                            <span>Pansijas</span>
+                                                        </label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="filters__form-item">
+                                            <div class="aside__item-title">Papildus iespējas</div>
+                                            <div class="filters__list">
+                                                <ul>
+                                                    <li class="filters__list-item">
+                                                        <label class="label filters__list-label">
+                                                            <input type="checkbox" name="pansias" value="" class="styler">
+                                                            <span>Atļauti mājdzīvnieki</span>
+                                                        </label>
+                                                    </li>
+                                                    <li class="filters__list-item">
+                                                        <label class="label filters__list-label">
+                                                            <input type="checkbox" name="pansias" value="" class="styler">
+                                                            <span>Atļauts ar bērniem</span>
+                                                        </label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="filters__form-item">
+                                            <div class="aside__item-title">Budžets (par nakti)</div>
+                                            <div class="filters__list">
+                                                <ul>
+                                                    <li class="filters__list-item">
+                                                        <label class="label filters__list-label">
+                                                            <input type="checkbox" name="price" value="" class="styler">
+                                                            <span>€ 0 - € 50</span>
+                                                        </label>
+                                                    </li>
+                                                    <li class="filters__list-item">
+                                                        <label class="label filters__list-label">
+                                                            <input type="checkbox" name="price" value="" class="styler">
+                                                            <span>€ 50 - € 100</span>
+                                                        </label>
+                                                    </li>
+                                                    <li class="filters__list-item">
+                                                        <label class="label filters__list-label">
+                                                            <input type="checkbox" name="price" value="" class="styler">
+                                                            <span>€ 100 - € 150</span>
+                                                        </label>
+                                                    </li>
+                                                    <li class="filters__list-item">
+                                                        <label class="label filters__list-label">
+                                                            <input type="checkbox" name="price" value="" class="styler">
+                                                            <span>€ 150 - € 200</span>
+                                                        </label>
+                                                    </li>
+                                                    <li class="filters__list-item">
+                                                        <label class="label filters__list-label">
+                                                            <input type="checkbox" name="price" value="" class="styler">
+                                                            <span>€ 200+</span>
+                                                        </label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>    
+                                                
+                                        <div class="filters__buttons ">
+                                            <div class="filters__wcont">
+                                                <button class="btn">Rādīt rezultātus</button>
+                                            </div>
+                                        </div>   
+                                    </form>
+                                </div> 
                             </div>
-                        </div>    
-                    </div><!--catalog__filters-->
+                        </div>  
+                    </div><!--catalog__aside-->
 
                     <div class="catalog__content">
-                        <div class="section__head">
+                        <div class="section__head catalog__head-mobhide">
                             <h2 class="section__title catalog__title">Ir atrastas 123 naktsmītnes</h2>
                         </div>
 
@@ -526,17 +573,50 @@
 
 </section>
 
-<div class="popup " data-popup="call">
+<div class="popup " data-popup="contact_owner">
 	<div class="popup__content">
 		<div class="popup__bg popup-close"></div>
+		<a href="#" class="popup__close popup-close"></a>
 		<div class="popup__container">
-			<a href="#" class="popup__close popup-close"></a>
 			<div class="popup__body">
-				<div class="popup__head">
-					<div class="popup__title"></div>
-					<div class="popup__intro"></div>
+				<div class="section__head text--center">
+					<div class="section__title">Contact owner</div>
+					<div class="section__intro">We usually respond within 24 hours</div>
 				</div>
-				
+
+				<form action="" method="post" class="form">
+					<textarea name="" class="input" placeholder="Start typing..."></textarea>
+
+					<button class="btn btn--wall">Send a message</button>
+				</form>
+			</div>
+		</div><!--popup__container-->
+	</div>
+</div>
+
+<div class="popup " data-popup="cancel_booking">
+	<div class="popup__content">
+		<div class="popup__bg popup-close"></div>
+		<a href="#" class="popup__close popup-close"></a>
+		<div class="popup__container">
+			<div class="popup__body">
+				<div class="section__head text--center">
+					<div class="section__title">Cancel reservation</div>
+					<div class="section__intro">We are sorry that you have chosen to cancel your reservation</div>
+				</div>
+
+				<form action="" method="post" class="form">
+					<select name="topic" class="styler" data-placeholder="Choose Topic">
+						<option value=""></option>
+						<option value="topic 1">topic 1</option>
+						<option value="topic 2">topic 2</option>
+						<option value="topic 3">topic 3</option>
+						<option value="topic 4">topic 4</option>
+					</select>
+					<textarea name="" class="input" placeholder="Any comments?"></textarea>
+
+					<button class="btn btn--wall">Cancel reservation</button>
+				</form>
 			</div>
 		</div><!--popup__container-->
 	</div>
