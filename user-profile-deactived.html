@@ -15,11 +15,11 @@
 	<meta name="format-detection" content="telephone=no"/>
 	<meta name="format-detection" content="address=no"/>
 	
-	<title>Register</title>
+	<title>Iznomātājs Pievienot jaunu dzīvokli</title>
 	<link href="favicon.png" type="image/png" rel="icon">
     <link href="favicon.png" type="image/png" rel="shortcut icon">  
 
-  	<meta property="og:title" content="Register" />
+  	<meta property="og:title" content="Iznomātājs Pievienot jaunu dzīvokli" />
 	<meta property="og:description" content="">
 	<meta property="og:image" content="images/logo.png" />
 	<meta property="og:url" content="" />  
@@ -70,16 +70,31 @@
 				<div class="header__navfix-box">
 					<div class="header__action">
 						
-							<a href="auth.html" class="header__btn btn btn--border">Ienākt</a>
-							<a href="reg.html" class="header__btn btn">Reģistrēties</a>
-							<a href="add.html" class="header__link header__reg">
-								<img src="images/icons/key.svg" alt="">					
-								<span>Pievienot mājokli</span>
-							</a>
-						
 
 						
 
+						
+							<div class="header__menu">
+								<ul>
+									<li><a href="">Sākums</a></li>
+									<li><a href="">Mani dzīvokļi</a></li>
+									<li><a href="">Rezervācijas</a></li>
+								</ul>
+							</div>
+
+							<a href="" class="header__btn btn">Pievienot dzīvokli</a>
+							<div class="header__login">
+								<a href="" class="header__link header__link-auth">
+									<img src="images/icons/user.svg" alt="">					
+									<span>User</span>
+								</a>
+								<div class="header__logdrop">
+									<ul>
+										<li><a href=""><img src="images/icons/user-2.svg" alt=""> Мой профиль</a></li>
+										<li><a href="">Выход</a></li>
+									</ul>
+								</div>
+							</div>
 						
 
 						
@@ -97,100 +112,19 @@
 </header>
     
     <main class="content__wrapper">
-		
-        <section class="auth">
+		        
+        <section class="thank section__pd">
             <div class="container">
-                <div class="auth__wrap">
-                    <div class="auth__content">
-                        <div class="auth__head">
-                            <div class="auth__title">Создайте свой профиль</div>
-                            <div class="auth__subtitle">Te var nelielu tekstu, ja vajag..</div>
-                        </div>  
-                        
-                        <div class="auth__navt">
-                            <ul>
-                                <li><a href="#" data-tab="ind" class="auth-navt-link active">Для физических лиц</a></li>
-                                <li><a href="#" data-tab="legal" class="auth-navt-link">Для юридических лиц</a></li>
-                            </ul>
-                        </div>
-
-                        <div class="auth__tab auth-tab active" data-tab="ind">
-                            <div class="auth__social">
-                                <a href="#" class="auth__social-btn">
-                                    <img src="images/icons/auth-google.png" alt="" class="auth__social-btn__icon">
-                                    <span>Login with Google</span>
-                                </a>
-                                <a href="#" class="auth__social-btn">
-                                    <img src="images/icons/auth-vk.png" alt="" class="auth__social-btn__icon">
-                                    <span>Login with VK</span>
-                                </a>
-                                <a href="#" class="auth__social-btn">
-                                    <img src="images/icons/auth-fb.png" alt="" class="auth__social-btn__icon">
-                                    <span>Login with Facebook</span>
-                                </a>
-                            </div>
-        
-                            <div class="auth__t">Или используйте свою электронную почту</div>
-
-                            <form action="" class="auth__form" enctype="multipart/form-data">
-                                <input type="text" name="" placeholder="Field" class="input">
-                                <input type="text" name="" placeholder="Field" class="input">
-                                <input type="text" name="" placeholder="Field" class="input">
-
-                                <label class="label mt">
-                                    <input type="file" name="" class="styler" data-browse="Upload a file" data-placeholder="Dokuments ..">
-                                </label>
-
-                                <button class="btn btn--wall">Reģistrēties</button>
-                            </form>
-                        </div>
-
-                        <div class="auth__tab auth-tab " data-tab="legal">
-                            <form action="" class="auth__form">
-                                <div class="auth__t">Ваша информация</div>
-                                <input type="text" name="" placeholder="Vārds Uzvārds" class="input">
-                                <input type="text" name="" placeholder="E-pasts" class="input">
-                                <input type="password" name="" placeholder="Parole" class="input">
-
-                                <div class="auth__t">Информация о компании</div>
-                                <input type="text" name="" placeholder="Field" class="input">
-                                <input type="text" name="" placeholder="Field" class="input">
-                                <input type="text" name="" placeholder="Field" class="input">
-
-                                <div class="auth__form-radio mt">
-                                    <div class="auth__form-radio__t">Radio Button</div>
-                                    
-                                    <div class="auth__form-radio__act">
-                                        <label class="label">
-                                            <input type="radio" name="radio1" class="styler">
-                                            <span>Answ 1</span>
-                                        </label>
-                                        <label class="label">
-                                            <input type="radio" name="radio1" class="styler">
-                                            <span>Answ 1</span>
-                                        </label>
-                                    </div>
-                                </div>
-                                
-                                <label class="label mt">
-                                    <input type="file" name="" class="styler" data-browse="Upload a file" data-placeholder="Dokuments ..">
-                                </label>
-
-                                <button class="btn btn--wall">Reģistrēties</button>
-                            </form>
-                        </div>
-                            
-                    </div>
-                
-                    <div class="auth__right">
-                        <div class="auth__bg"></div>
-                    </div>
+                <div class="thank__wrap">
+                    <div class="thank__icon"><img src="images/icons/icon-thank-deactived.svg" alt=""></div>
+                    <div class="thank__title">Account is deactivated</div>
+                    <div class="thank__intro">Please <b>write to support</b> if you have any questions.</div>
                 </div>
             </div>
-        </section><!--auth-->
-        
+        </section><!--thank-->
 
 	</main><!--content__wrapper-->
+
 
     <footer class="footer">
     <div class="container">

@@ -4,6 +4,9 @@ $(function(){
 
     $.mask.definitions['~']='[78]';
 	$(".phone-mask").mask("~(999)999-99-99");
+	$(".card-mask").mask("9999 9999 9999 9999");
+	$(".date-card-mask").mask("99");
+	$(".cvc-mask").mask("999");
 
 	$('.datepicker-from').datepicker({
 		minDate: 0,   
@@ -22,17 +25,42 @@ $(function(){
 	});
 
 
+	$('.input-place .input').focus(function () {
+	    $(this).next('.text_place').hide();
+		
+	});
+	$('.input-place .input').blur(function () {
+	    if ($(this).val().trim() === '') {
+			$(this).next('.text_place').show();
+	    }
+	});
+	$('.input-place .input').each(function( index ) {
+	  	if ($(this).val().trim() === '') {
+	        $(this).next('.text_place').show();
+	    }
+	    else {
+			$(this).next('.text_place').hide();
+		}
+	});
 
+	$(".pass-view").on("click", function (e) {
+		if ($(this).hasClass('view')) {
+			$(this).prev().attr('type', 'password');
+		} else {
+			$(this).prev().attr('type', 'text');
+		}
+		$(this).toggleClass('view')
+	});
+	
 
 	/**************************************************************
 	ПОПАПЫ
 	**************************************************************/
 	$('body').on('click', '.btn-popup', function(e){
         e.preventDefault();
+		$('.popup').fadeOut(800);
+
         let popup = $('.popup[data-popup="'+$(this).attr('data-popup')+'"]');
-        
-        if ($(this).attr('data-push') != '')
-        	$(popup).find('form').attr('data-push', $(this).attr('data-push'));
         $(popup).fadeIn(800); 
 		$('body').addClass('noscroll');
 	})		
@@ -63,18 +91,35 @@ $(function(){
 	**************************************************************/
 	$('.counter-plus').click(function () {
 		let counter = $(this).parents('.counter');
-		let val = parseInt($(counter).find('input').val());
+		let val = parseInt($(counter).find('.counter-value').text());
 		if (Number.isNaN(val)) val = 0;
 		val++;
+		$(counter).find('.counter-value').text(val);
 		$(counter).find('input').val( val );
+		$(counter).parents('.counter-fix').prev().val(val);
 	});	
 	$('.counter-minus').click(function () {
 		let counter = $(this).parents('.counter');
-		let val = parseInt($(counter).find('input').val());
+		let val = parseInt($(counter).find('.counter-value').text());
 		if (Number.isNaN(val)) val = 0;
 		val--; 
 		val = val < 1 ? 1 : val;
+		$(counter).find('.counter-value').text(val);
 		$(counter).find('input').val(val);
+		$(counter).parents('.counter-fix').prev().val(val);
+	});
+	
+	$('body').on('focus', '.input-counter', function(e){
+        e.preventDefault();
+        $(this).next().fadeIn();
+	})
+	$(document).mouseup( function(e){ // событие клика по веб-документу
+		var div = $( ".counter-fix" ); // тут указываем ID элемента
+		if ( !div.is(e.target) // если клик был не по нашему блоку
+		    && div.has(e.target).length === 0
+			&& !$('.input-counter').is(e.target) ) { // и не по его дочерним элементам
+			div.hide(); // скрываем его
+		}
 	});
 
 	/**************************************************************
@@ -128,7 +173,7 @@ $(function(){
 		percent_progr = (100/count_step*step).toFixed();
 		$('#progress_addap_percent').css('width', percent_progr+'%');
 
-		if (step == (count_step-1)) {
+		if (step == count_step) {
 			$('.addap-next').hide();
 			$('.addap-finish').show();
 		}
@@ -178,10 +223,21 @@ $(function(){
 	});
 
 
+	var main_cl = 'addap__photos-item--main'; 
+	var main_cont = '<div class="addap__photos-item__main">\
+						Главное фото\
+						<div class="hint__box">\
+							<img src="images/icons/hint-i-white.svg" alt="">\
+							<div class="hint">Фотография, которая будет <br>\
+								всегда отображаться первой</div>\
+						</div>\
+					</div>\
+				</div>';
+
 	//Добавление фото
     $("body").on('change', '.add-photos-apart [type=file]', function (event)
     {
-		$('.addap-photo-item').show();
+		
         var input = $(this)[0];
         if (input.files && input.files[0])
         {
@@ -217,7 +273,20 @@ $(function(){
                             ctx.drawImage(img, 0, 0, width, height);
                             let compressedData = canvas.toDataURL("image/jpeg", 0.7);
 
-							$('.addap-photo-item.empty').eq(0).removeClass('empty').append('<img class="" src="' + compressedData + '" />');
+							let main_cl_c = '', main_cont_c = '';
+							if ($('.addap-photo-item').length == 0) {
+								main_cl_c = main_cl; 
+								main_cont_c = main_cont;
+							}
+							
+							$('.addap-photos-items').append('\
+									<div class="addap__photos-item '+main_cl_c+' addap-photo-item">\
+										<a href="#" class="addap__photos-item__remove hint__box addap-photo-item-remove">\
+											<div class="hint">Удалить фото</div>\
+										</a>\
+										<div class="addap__photos-item__wrap"><img src="'+compressedData+'" alt=""></div>'
+									+  main_cont_c
+								);
 							
                         }),
                         (img.onerror = function (err) {
@@ -227,13 +296,6 @@ $(function(){
                     }
                     reader.readAsDataURL(input.files[i]);
 
-					
-					addap_count_photo++;
-					$('.addap-photos-count').text(addap_count_photo);
-					if (addap_count_photo == addap_count_photo_max) return;
-					if (addap_count_photo <= addap_count_photo_max-4) {
-						$('.addap-photos-items').append('<div class="addap__photos-item empty  addap-photo-item"></div>');
-					}
                 }
 
             } else
@@ -246,6 +308,19 @@ $(function(){
         }
 
     });
+
+	//Добавление фото
+    $("body").on('click', '.addap-photo-item-remove', function (e) {
+        e.preventDefault();
+
+		let main_cl_c = '', main_cont_c = '';
+		if ($(this).parents('.addap-photo-item').index() == 0) {
+			main_cl_c = main_cl; 
+			main_cont_c = main_cont;
+		}
+		$(this).parents('.addap-photo-item').remove();
+		$('.addap-photo-item:first').addClass(main_cl_c).append(main_cont_c);
+	})
 
 	
 	/**************************************************************
@@ -264,18 +339,24 @@ $(function(){
 		$(row).removeClass('changed');
 		$(row).find('.settings-row-form').fadeOut(100);
 		$(row).find('.settings-row-info').fadeIn(300);
-		$(row).find('input').val( $(row).find('input').attr('data-val') );
+		// $(row).find('input').val( $(row).find('input').attr('data-val') );
 	})	
 	$('body').on('submit', '.settings-row-form', function(e){
         e.preventDefault();
+		
+        $('.popup[data-popup="change_profile_data"]').fadeIn(500); 
+		$('body').addClass('noscroll');
+
+
         let row = $(this).parents('.settings-row');
 		$(row).removeClass('changed');
 		$(row).find('.settings-row-form').fadeOut(100);
 		$(row).find('.settings-row-info').fadeIn(300);
+		
 
-		let input =  $(row).find('input');
-		$(row).find('.settings-row-value').text( $(input).val() );
-		$(input).attr('data-val', $(input).val() );
+		// let input =  $(row).find('input');
+		// $(row).find('.settings-row-value').text( $(input).val() );
+		// $(input).attr('data-val', $(input).val() );
 	})	
 
 	$('body').on('click', '.settings-change-password', function(e){
@@ -367,6 +448,63 @@ $(function(){
 		$(this).find('.accord-body').slideToggle();
 	});
 
+	
+	/**************************************************************
+	Избранное
+	**************************************************************/	
+	$('body').on('click', '.favour-link', function(e){
+        e.preventDefault();
+		let favour = $(this).parents('.favour');
+        $(favour).toggleClass('active');
+		$(favour).removeClass('hover'); 
+		if ($(favour).hasClass('active')) {
+			$(favour).find('.favour-thank').fadeIn(200);
+			setInterval(function(){
+				$(favour).find('.favour-thank').fadeOut(200);
+			}, 3000);
+		}
+	})	
+	$(".favour-link").mouseover(function() {
+		let favour = $(this).parents('.favour');
+		$(favour).addClass('hover');    
+	})
+	.mouseout(function(){       
+		let favour = $(this).parents('.favour');    
+		$(favour).removeClass('hover');    
+	});
+
+	$('body').on('click', '.favour-add', function(e){
+        e.preventDefault();
+		let favour = $(this);
+        $(favour).toggleClass('active');
+	})	
+	
+
+	
+	/**************************************************************
+	Удаление строки в таблице
+	**************************************************************/	
+	$('body').on('click', '.link-remove', function(e){
+        e.preventDefault();
+		$('.popup-remove').fadeIn(800); 
+		$('body').addClass('noscroll');
+	})	
+	
+		
+	/**************************************************************
+	Скролл стилизация
+	**************************************************************/	
+	$(".content-scroll").mCustomScrollbar({
+        scrollButtons:{
+            enable:false
+        },
+        scrollInertia:50,
+        horizontalScroll:false,
+        autoDraggerLength:true,
+        // autoHideScrollbar:true,
+        advanced:{
+            autoScrollOnFocus: false,autoExpandHorizontalScroll:true,updateOnContentResize:true}
+    });  
 });
 
 

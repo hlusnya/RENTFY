@@ -25,32 +25,35 @@
 	<meta property="og:url" content="" />  
 
  	<!--[if IE]>
-    	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js?_v=20220802111450"></script>
+    	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js?_v=20220802111450"></script>
     <![endif]--> 
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap&_v=20220802111450" rel="stylesheet"> 
  
 	
 
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.4.2/jquery.fancybox.min.css" type="text/css" media="all" />
-	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-	<link href="js/slick/slick.css" rel="stylesheet">
-	<link href="styles/styles.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.4.2/jquery.fancybox.min.css?_v=20220802111450" type="text/css" media="all" />
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css?_v=20220802111450">
+	<link rel="stylesheet" href="js/mCustomScrollbar/jquery.mCustomScrollbar.css?_v=20220802111450">
+	<link href="js/slick/slick.css?_v=20220802111450" rel="stylesheet">
+	<link href="styles/styles.min.css?_v=20220802111450" rel="stylesheet">
 
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="js/jquery.validate.min.js"></script>
-    <script type="text/javascript" src="js/jquery.maskedinput.js"></script>
-    <script type="text/javascript" src="js/jquery.formstyler.js"></script>
-    <script type="text/javascript" src="js/slick/slick.js"></script>
-    <script type="text/javascript" src="js/forms.js"></script>
-    <script type="text/javascript" src="js/scripts.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js?_v=20220802111450" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/jquery.validate.min.js?_v=20220802111450"></script>
+    <script type="text/javascript" src="js/jquery.maskedinput.js?_v=20220802111450"></script>
+    <script type="text/javascript" src="js/jquery.formstyler.js?_v=20220802111450"></script>
+    <script type="text/javascript" src="js/slick/slick.js?_v=20220802111450"></script>
+   
+    <script type="text/javascript" src="js/forms.js?_v=20220802111450"></script>
+    <script type="text/javascript" src="js/scripts.js?_v=20220802111450"></script>
 
 
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.4.2/jquery.fancybox.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js?_v=20220802111450"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.4.2/jquery.fancybox.min.js?_v=20220802111450"></script>
+	<script type="text/javascript" src="js/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js?_v=20220802111450"></script>
 </head>
 
 <body>
@@ -80,10 +83,18 @@
 							</div>
 
 							<a href="" class="header__btn btn">Pievienot dzīvokli</a>
-							<a href="" class="header__link header__link-auth">
-								<img src="images/icons/user.svg" alt="">					
-								<span>User</span>
-							</a>
+							<div class="header__login">
+								<a href="" class="header__link header__link-auth">
+									<img src="images/icons/user.svg" alt="">					
+									<span>User</span>
+								</a>
+								<div class="header__logdrop">
+									<ul>
+										<li><a href=""><img src="images/icons/user-2.svg" alt=""> Мой профиль</a></li>
+										<li><a href="">Выход</a></li>
+									</ul>
+								</div>
+							</div>
 						
 
 						
@@ -101,16 +112,15 @@
 </header>
     
     <main class="content__wrapper">
-		        
-        <section class="addap section__pd">
+        <section class="addap ">
             <div class="container">
                 <div class="addap__wrap">
-                    <form action="" class="addap__form">
+                    <form action="" class="addap__form " >
+                        <div class="addap__form-title">Сдайте жилье всего за 7 шагов</div>
                         
-                        <div class="addap__step addap-step  active">
+                        <div class="addap__step addap-step active">
                             <div class="addap__head">
-                                <div class="addap__title">Kāds ir Jūsu īpašuma tips?</div>
-                                <div class="addap__subtitle">Te var nelielu tekstu, ja vajag..</div>
+                                <div class="addap__title"><span class="addap__title-v">Вопрос 1.</span>Какой у вас тип жилья?</div>
                             </div>
 
                             <div class="addap__items">
@@ -144,8 +154,7 @@
                         
                         <div class="addap__step addap-step">
                             <div class="addap__head">
-                                <div class="addap__title">Kāda veida mājoklis būs viesu rīcībā?</div>
-                                <div class="addap__subtitle">Te var nelielu tekstu, ja vajag..</div>
+                                <div class="addap__title"><span class="addap__title-v">Вопрос 2.</span>Что вы предлагаете?</div>
                             </div>
 
                             <div class="addap__items">
@@ -165,14 +174,13 @@
                         </div><!--addap__step-->
                         
                         
-                        <div class="addap__step addap-step">
+                        <div class="addap__step addap-step ">
                             <div class="addap__head">
-                                <div class="addap__title">Ievadiet mājokļa adresi!</div>
-                                <div class="addap__subtitle">Te var nelielu tekstu, ja vajag..</div>
+                                <div class="addap__title"><span class="addap__title-v">Вопрос 3.</span>Где расположено ваше жилье?</div>
                             </div>
 
                             <div class="addap__inputs">
-                                <select name="country_apart" class="styler" data-placeholder="Valsts">
+                                <select name="country_apart" class="styler styler--req" data-placeholder="Страна">
                                     <option value=""></option>
                                     <option value="Беларусь">Беларусь</option>
                                     <option value="Венгрия">Венгрия</option>
@@ -182,7 +190,7 @@
                                     <option value="Россия">Россия</option>
                                 </select>
                                 
-                                <select name="city_apart" class="styler" data-placeholder="Pilsēta">
+                                <select name="city_apart" class="styler styler--req" data-placeholder="Город">
                                     <option value=""></option>
                                     <option value="Беларусь">Беларусь</option>
                                     <option value="Венгрия">Венгрия</option>
@@ -192,7 +200,7 @@
                                     <option value="Россия">Россия</option>
                                 </select>
 
-                                <select name="region_apart" class="styler" data-placeholder="Reģions">
+                                <select name="region_apart" class="styler styler--req" data-placeholder="Область">
                                     <option value=""></option>
                                     <option value="Беларусь">Беларусь</option>
                                     <option value="Венгрия">Венгрия</option>
@@ -202,16 +210,23 @@
                                     <option value="Россия">Россия</option>
                                 </select>
 
-                                <input type="text" name="address_apart" class="input" placeholder="Adrese">
-                                <input type="text" name="index_apart" class="input" placeholder="Pasta indekss ??">
+                                
+                                <div class="row__input input__place input-place">
+                                    <input type="text" name="" class="input">
+                                    <div class="text_place"><span>Улица, дом <span class="req_zv">*</span></span></div>
+                                </div>
+                                
+                                <div class="row__input input__place input-place">
+                                    <input type="text" name="" class="input">
+                                    <div class="text_place"><span>Индекс (необязательно)</span></div>
+                                </div>
                             </div>   
                         </div><!--addap__step-->
                         
                         
                         <div class="addap__step addap-step ">
                             <div class="addap__head">
-                                <div class="addap__title">Atzīmējat, kas ir Jūsu īpašumā!</div>
-                                <div class="addap__subtitle">Te var nelielu tekstu, ja vajag..</div>
+                                <div class="addap__title"><span class="addap__title-v">Вопрос 4.</span>Какие преимущества у вашего жилья?</div>
                             </div>
 
                             <div class="addap__items addap__props">
@@ -303,106 +318,225 @@
                         </div><!--addap__step-->
                         
                         
-                        <div class="addap__step addap-step">
+                        <div class="addap__step addap-step ">
                             <div class="addap__head">
-                                <div class="addap__title">Pievieno vismaz 5 attēlus</div>
-                                <div class="addap__subtitle">Te var nelielu tekstu, ja vajag..</div>
+                                <div class="addap__title"><span class="addap__title-v">Вопрос 5.</span>Добавьте фотографии жилья.</div>
                             </div>
 
                             <div class="addap__photos addap-photos">
-                                <script>
+                                <!-- <script>
                                     var addap_count_photo = 0;
-                                    var addap_count_photo_max = 6;
-                                </script>
+                                    var addap_count_photo_max = 600;
+                                </script> -->
                                 <div class="addap__photos-uploading">
-                                    <label class="uploading add-photos-apart">
-                                        <input type="file" multiple="" name="photos_apart" accept="image/*">
-                                        Augšupielādē attēlus
-                                    </label>
+                                    <div class="addap__photos-uploading__wrap">
+                                        <label class="uploading add-photos-apart">
+                                            <input type="file" multiple="" name="photos_apart" accept="image/jpg,image/jpeg,image/png">
+                                            Augšupielādē attēlus
+                                        </label>
+                                        <div class="addap__photos-uploading__th">Форматы изображений: <br> jpg, jpeg, png.</div>
+                                    </div>
                                 </div>
+
+                                <div class="addap__photos-text">
+                                    <p><b>Загрузите, как минимум, 1 фотографию вашего объекта размещения.</b></p> 
+                                    <p> Чем больше фотографий вы добавите в объявление, тем выше
+                                        шансы, что ваш объект быстрее забронируют.</p>
+                                </div>
+
+                                <div ></div>
 
                                 <div class="addap__photos-items addap-photos-items">
-                                    <div class="addap__photos-item empty  addap-photo-item"></div>
-                                    <div class="addap__photos-item empty  addap-photo-item"></div>
-                                    <div class="addap__photos-item empty  addap-photo-item"></div>
-                                    <div class="addap__photos-item empty  addap-photo-item"></div>
+                                     
                                 </div>
 
-                                <div class="addap__photos-count">
+                                <!-- <div class="addap__photos-count">
                                     <span class="addap-photos-count"><script>document.write(addap_count_photo)</script></span>/<script>document.write(addap_count_photo_max)</script>
-                                </div>
+                                </div> -->
                             </div>
                         </div><!--addap__step-->
                         
                         
-                        <div class="addap__step addap-step ">
+                        <div class="addap__step addap-step">
                             <div class="addap__head">
-                                <div class="addap__title">Būtiskākā informācija</div>
-                                <div class="addap__subtitle">Te var nelielu tekstu, ja vajag..</div>
+                                <div class="addap__title"><span class="addap__title-v">Вопрос 6.</span>Расскажите о жилье подробнее.</div>
                             </div>
                             
                             <div class="addap__inputs">
-                                <input type="text" name="names_apart" class="input" placeholder="Dzīvokļa nosaukums">
-                                <input type="text" name="smalldesc_apart" class="input" placeholder="Pastāstiet par dzīvokli 3 teikumos!">
-                                <textarea name="desc_apart" class="input" placeholder="Aprakstiet dzīvokli detalizēti"></textarea>
-                                <input type="text" name="price_apart" class="input" placeholder="Cena par nakti">
+                                
+                                <div class="row__input input__place input__numbers input-place">
+                                    <input type="text" name="names_apart" class="input">
+                                    <div class="text_place"><span>Название квартиры <span class="req_zv">*</span></span></div>
+                                    <div class="text_numbers">0/50</div>
+                                </div>
+                                <div class="row__input input__place input__numbers input-place">
+                                    <textarea name="smalldesc_apart" class="input"></textarea>
+                                    <div class="text_place"><span>Краткое описание квартиры <span class="req_zv">*</span></span></div>
+                                    <div class="text_numbers text_numbers--bottom">0/200</div>
+                                </div>
+                                <div class="row__input input__place input__numbers input-place">
+                                    <textarea name="desc_apart" class="input"></textarea>
+                                    <div class="text_place"><span>Подробное описание квартиры <span class="req_zv">*</span></span></div>
+                                    <div class="text_numbers text_numbers--bottom">0/1500</div>
+                                </div>
+                                <div class="row__input input__place input-place">
+                                    <input type="text" name="price_apart" class="input">
+                                    <div class="text_place"><span>Цена за ночь в € <span class="req_zv">*</span></span></div>
+                                </div>
 
-                                <div class="addap__tdop">Atzīmējiet informāciju:</div>
+                                <div class="addap__tdop">Укажите параметры:</div>
                                 
                                 <div class="row__input row__between">
-                                    <span>Cik viesus varat uzņemt?</span>
-                                    <select name="guest_apart" class="styler styler--counter addap__selcount">
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                    </select>
+                                    <span>Сколько гостей готовы принять? <span class="req_zv">*</span></span>
+                                    
+                                    <div class="counter">
+                                        <input type="hidden" name="counter" value="1">
+                                        <button class="counter__button counter__button-minus counter-minus" type="button"></button>
+                                        <div class="counter__value counter-value">1</div>
+                                        <button class="counter__button counter__button-plus counter-plus" type="button"></button>
+                                    </div> 
                                 </div>
                                 <div class="row__input row__between">
-                                    <span>Cik gultas vietas piedāvājat?</span>
-                                    <select name="place_apart" class="styler styler--counter addap__selcount">
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                    </select>
+                                    <span>Сколько есть кроватей? *</span>
+                                    <div class="counter">
+                                        <input type="hidden" name="counter" value="1">
+                                        <button class="counter__button counter__button-minus counter-minus" type="button"></button>
+                                        <div class="counter__value counter-value">1</div>
+                                        <button class="counter__button counter__button-plus counter-plus" type="button"></button>
+                                    </div> 
                                 </div>
                                 <div class="row__input row__between">
-                                    <span>Cik guļamistabu?</span>
-                                    <select name="rooms_apart" class="styler styler--counter addap__selcount">
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                    </select>
+                                    <span>Сколько спален? *</span>
+                                    <div class="counter">
+                                        <input type="hidden" name="counter" value="1">
+                                        <button class="counter__button counter__button-minus counter-minus" type="button"></button>
+                                        <div class="counter__value counter-value">1</div>
+                                        <button class="counter__button counter__button-plus counter-plus" type="button"></button>
+                                    </div> 
                                 </div>
                                 <div class="row__input row__between">
-                                    <span>Cik vannas istabu?</span>
-                                    <select name="bathroom_apart" class="styler styler--counter addap__selcount">
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                    </select>
+                                    <span>Сколько ванных комнат? *</span>
+                                    <div class="counter">
+                                        <input type="hidden" name="counter" value="1">
+                                        <button class="counter__button counter__button-minus counter-minus" type="button"></button>
+                                        <div class="counter__value counter-value">1</div>
+                                        <button class="counter__button counter__button-plus counter-plus" type="button"></button>
+                                    </div> 
                                 </div>
                                 <div class="row__input row__between">
                                     <span>Reģistrēšanās</span>
                                     <div class="row__between datepicker-block">
-                                        <input type="text" name="checkin-from" class="input datepicker-from addap__date" placeholder="No">
-                                        <input type="text" name="checkin-to" class="input datepicker-to addap__date" placeholder="Līdz">
+                                        No 
+                                        <select name="checkin-from" class="addap__date styler">
+                                            <option value="00:00">00:00</option>
+                                            <option value="00:00">01:00</option>
+                                            <option value="00:00">02:00</option>
+                                            <option value="00:00">03:00</option>
+                                            <option value="00:00">04:00</option>
+                                            <option value="00:00">05:00</option>
+                                            <option value="00:00">06:00</option>
+                                            <option value="00:00">07:00</option>
+                                            <option value="00:00">08:00</option>
+                                            <option value="00:00">09:00</option>
+                                            <option value="00:00">10:00</option>
+                                            <option value="00:00">11:00</option>
+                                            <option value="00:00">12:00</option>
+                                            <option value="00:00">13:00</option>
+                                            <option value="00:00">14:00</option>
+                                        </select>
+                                        &nbsp;&nbsp;
+                                        Līdz 
+                                        <select name="checkin-from" class="addap__date styler">
+                                            <option value="00:00">00:00</option>
+                                            <option value="00:00">01:00</option>
+                                            <option value="00:00">02:00</option>
+                                            <option value="00:00">03:00</option>
+                                            <option value="00:00">04:00</option>
+                                            <option value="00:00">05:00</option>
+                                            <option value="00:00">06:00</option>
+                                            <option value="00:00">07:00</option>
+                                            <option value="00:00">08:00</option>
+                                            <option value="00:00">09:00</option>
+                                            <option value="00:00">10:00</option>
+                                            <option value="00:00">11:00</option>
+                                            <option value="00:00">12:00</option>
+                                            <option value="00:00">13:00</option>
+                                            <option value="00:00">14:00</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="row__input row__between">
                                     <span>Izrakstīšanās</span>
                                     <div class="row__between datepicker-block">
-                                        <input type="text" name="checkout-from" class="input datepicker-from addap__date" placeholder="No">
-                                        <input type="text" name="checkout-to" class="input datepicker-to addap__date" placeholder="Līdz">
+                                        No 
+                                        <select name="checkin-from" class="addap__date styler">
+                                            <option value="00:00">00:00</option>
+                                            <option value="00:00">01:00</option>
+                                            <option value="00:00">02:00</option>
+                                            <option value="00:00">03:00</option>
+                                            <option value="00:00">04:00</option>
+                                            <option value="00:00">05:00</option>
+                                            <option value="00:00">06:00</option>
+                                            <option value="00:00">07:00</option>
+                                            <option value="00:00">08:00</option>
+                                            <option value="00:00">09:00</option>
+                                            <option value="00:00">10:00</option>
+                                            <option value="00:00">11:00</option>
+                                            <option value="00:00">12:00</option>
+                                            <option value="00:00">13:00</option>
+                                            <option value="00:00">14:00</option>
+                                        </select>
+                                        &nbsp;&nbsp;
+                                        Līdz 
+                                        <select name="checkin-from" class="addap__date styler">
+                                            <option value="00:00">00:00</option>
+                                            <option value="00:00">01:00</option>
+                                            <option value="00:00">02:00</option>
+                                            <option value="00:00">03:00</option>
+                                            <option value="00:00">04:00</option>
+                                            <option value="00:00">05:00</option>
+                                            <option value="00:00">06:00</option>
+                                            <option value="00:00">07:00</option>
+                                            <option value="00:00">08:00</option>
+                                            <option value="00:00">09:00</option>
+                                            <option value="00:00">10:00</option>
+                                            <option value="00:00">11:00</option>
+                                            <option value="00:00">12:00</option>
+                                            <option value="00:00">13:00</option>
+                                            <option value="00:00">14:00</option>
+                                        </select>
                                     </div>
                                 </div>
+                                <div class="row__input row__between">
+                                    <span>Mājdzīvnieki</span>
+                                    
+                                    <div class="row__between">
+                                        <label class="label">
+                                            <input type="radio" name="radio1" class="styler" checked>
+                                            <span>Atļauti</span>
+                                        </label>
+                                        &nbsp;&nbsp;
+                                        <label class="label">
+                                            <input type="radio" name="radio1" class="styler">
+                                            <span>Neatļauti</span>
+                                        </label>
+                                    </div>
+                                </div>   
+                                <div class="row__input row__between">
+                                    <span>Vecuma ierobežojums</span>
+                                    
+                                    <div class="row__between">
+                                        <label class="label">
+                                            <input type="radio" name="radio2" class="styler" checked>
+                                            <span>Nav ierobežojums</span>
+                                        </label>
+                                        &nbsp;&nbsp;
+                                        <label class="label">
+                                            <input type="radio" name="radio2" class="styler">
+                                            <span>Tikai pilngadīgie</span>
+                                        </label>
+                                    </div>
+                                </div>  
                             </div>  
                         </div><!--addap__step-->
                     </form>
@@ -414,9 +548,11 @@
                 <div class="container">
                     <div class="addap__wrap addap__nav-wrap">
                         <div class="addap__nav-links">
-                            <a href="#" class="addap__nav-link addap-prev"><- Atpakaļ</a>
+                            <a href="#" class="addap__nav-link addap-prev gray"><- Atpakaļ</a>
                             <span class="addap__nav-sep"></span>
-                            <a href="#" class="addap__nav-link addap-save">Saglabāt un turpināt vēlāk</a>
+                            <a href="#" class="addap__nav-link addap-save">
+                                <span class="str_img str_img--md"><img src="images/icons/save.svg" alt=""> Saglabāt un turpināt vēlāk</span>
+                            </a>
                         </div>
 
                         <div class="addap__nav-right">
@@ -498,6 +634,138 @@
 		</div><!--popup__container-->
 	</div>
 </div>
+
+<!-- УДАЛЕНИЕ ЧЕГО ЛИБО -->
+<div class="popup popup-remove" data-popup="remove">
+	<div class="popup__content">
+		<div class="popup__bg popup-close"></div>
+		<div class="popup__container">
+			<a href="#" class="popup__close popup-close"></a>
+			<div class="popup__body">
+				<div class="popup__quest">Вы уверены, что хотите удалить?</div>
+
+				<div class="popup__buttons">
+					<button class="btn popup-close">Отмена</button>
+					<button class="btn btn--red popup-close">Удалить</button>
+				</div>
+			</div>
+		</div><!--popup__container-->
+	</div>
+</div>
+
+<!-- ИЗМЕНЕНИЕ ФОТО ПРОФИЛЯ -->
+<div class="popup" data-popup="change_profile_photo">
+	<div class="popup__content">
+		<div class="popup__bg popup-close"></div>
+		<div class="popup__container">
+			<a href="#" class="popup__close popup-close"></a>
+			<div class="popup__body">
+				<div class="popup__quest">Изменение фото профиля</div>
+
+				<div class="popup__buttons">
+					<button class="btn btn-popup" data-popup="thank_save_profile_photo">Изменить фото</button>
+					<button class="btn btn--red btn-popup" data-popup="thank_del_profile_photo">Удалить фото</button>
+				</div>
+			</div>
+		</div><!--popup__container-->
+	</div>
+</div>
+<div class="popup" data-popup="thank_save_profile_photo">
+	<div class="popup__content">
+		<div class="popup__bg popup-close"></div>
+		<div class="popup__container">
+			<a href="#" class="popup__close popup-close"></a>
+			<div class="popup__body">
+
+				<div class="popup__iconthank"><img src="images/icons/icon-thank-ok-green.svg" alt=""></div>
+				<div class="popup__tthank">Фото профиля изменено!</div>
+
+			</div>
+		</div><!--popup__container-->
+	</div>
+</div>
+<div class="popup" data-popup="thank_del_profile_photo">
+	<div class="popup__content">
+		<div class="popup__bg popup-close"></div>
+		<div class="popup__container">
+			<a href="#" class="popup__close popup-close"></a>
+			<div class="popup__body">
+
+				<div class="popup__iconthank"><img src="images/icons/icon-thank-del.svg" alt=""></div>
+				<div class="popup__tthank">Фото профиля удалено!</div>
+
+			</div>
+		</div><!--popup__container-->
+	</div>
+</div>
+
+<!-- ДЕАКТИВИРОВАТЬ ПРОФИЛЬ -->
+<div class="popup" data-popup="deactive_account">
+	<div class="popup__content">
+		<div class="popup__bg popup-close"></div>
+		<div class="popup__container">
+			<a href="#" class="popup__close popup-close"></a>
+			<div class="popup__body">
+				<div class="popup__quest">Вы действительно хотите
+					деактивировать аккаунт?</div>
+
+				<div class="row__input input__place input-place">
+					<textarea name="" class="input"></textarea>
+					<div class="text_place"><span>Напишите причину, по которой вы хотите
+						деактивировать аккаунт <span class="req_zv">*</span></span></div>
+				</div>
+
+				<div class="popup__buttons popup__buttons--one">
+					<button class="btn btn--hsm btn--red popup-close">Деактивировать аккаунт</button>
+				</div>
+			</div>
+		</div><!--popup__container-->
+	</div>
+</div>
+
+<!-- ИЗМЕНЕНИЕ ИМЕНИ И ПАСПОРТА В ПРОФИЛЕ -->
+<div class="popup" data-popup="change_name_passport">
+	<div class="popup__content">
+		<div class="popup__bg popup-close"></div>
+		<div class="popup__container">
+			<a href="#" class="popup__close popup-close"></a>
+			<div class="popup__body">
+				<div class="popup__quest">Изменение имени и <br> данных паспорта</div>
+				<div class="popup__intro">Пожалуйста, напишите в тех поддержку. Изменение
+					имени и данных паспорта возможны только
+					с одобрения тех поддержки.</div>
+
+				<div class="popup__buttons popup__buttons--one">
+					<a href="help-contact.html" class="btn btn--hsm">Написать в тех поддержку</a>
+				</div>
+			</div>
+		</div><!--popup__container-->
+	</div>
+</div>
+
+
+<!-- ИЗМЕНЕНИЕ ДАННЫХ В ПРОФИЛЕ -->
+<div class="popup" data-popup="change_profile_data">
+	<div class="popup__content">
+		<div class="popup__bg popup-close"></div>
+		<div class="popup__container">
+			<a href="#" class="popup__close popup-close"></a>
+			<div class="popup__body">
+				<div class="popup__quest">Изменения вступят в силу <br>
+					в течении 24 часов</div>
+				<div class="popup__intro">Изменения вступят в силу только после рассмотрения
+					администратором сервиса. Обычно это занимает
+					до 24 часов. Если вам необходимо внести изменения
+					в срочном порядке, обратитесь в тех поддержку.</div>
+
+				<div class="popup__buttons popup__buttons--one">
+					<a href="help-contact.html" class="btn btn--hsm">Написать в тех поддержку</a>
+				</div>
+			</div>
+		</div><!--popup__container-->
+	</div>
+</div>
+
     
 </body>
 </html>
